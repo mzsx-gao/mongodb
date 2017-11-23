@@ -33,6 +33,7 @@ public class MongodbReplicationTest {
     //获取
     @Before
     public void before(){
+        //mongo服务器地址
         ServerAddress sa = new ServerAddress("172.29.151.69", 27017);
         ServerAddress sa1 = new ServerAddress("172.29.151.70", 27017);
         ServerAddress sa2 = new ServerAddress("172.29.151.71", 27017);
@@ -40,9 +41,11 @@ public class MongodbReplicationTest {
         sends.add(sa);
         sends.add(sa1);
         sends.add(sa2);
+        //用户名认证
         List<MongoCredential> mongoCredentialList = new ArrayList<MongoCredential>();
         mongoCredentialList.add(MongoCredential.createCredential("repayment-api", "repayment-api",
                 "repayment-api".toCharArray()));
+
         MongoClient client = new MongoClient(sends,mongoCredentialList);
         MongoDatabase db = client.getDatabase("repayment-api");
         collection = db.getCollection("test");
