@@ -2,6 +2,8 @@ package com.gao.mongodb;
 
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -12,6 +14,7 @@ import org.bson.conversions.Bson;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -31,7 +34,8 @@ public class MongodbTest {
     //获取
     @Before
     public void before(){
-        MongoClient client = new MongoClient("172.16.36.102", 27017);
+        MongoCredential credential = MongoCredential.createCredential("root","admin","root".toCharArray());
+        MongoClient client = new MongoClient(new ServerAddress("172.16.216.138",27017), Arrays.asList(credential));
         MongoDatabase db = client.getDatabase("test");
         collection = db.getCollection("test");
         System.out.println(collection);

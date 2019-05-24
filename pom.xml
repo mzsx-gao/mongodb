@@ -11,7 +11,21 @@
     <modules>
         <module>mongodb-base</module>
         <module>mongodb-springboot</module>
+        <module>mongodb-springboot-multi</module>
     </modules>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
