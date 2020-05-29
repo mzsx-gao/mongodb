@@ -7,15 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.junit.Test;
 
-/**
- *   名称: testMongodb.java
- *   描述:
- *   类型: JAVA
- *   最近修改时间:2017/11/23 17:53
- *   @version [版本号, V1.0]
- *   @since 2017/11/23 17:53
- *   @author gaoshudian
- */
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes= Application.class)
