@@ -1,5 +1,6 @@
-package com.gao.mongodb.springboot;
+package com.gao.mongodb.springboot.dao;
 
+import com.gao.mongodb.springboot.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -7,15 +8,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-/**
- *   名称: UserDaoImpl.java
- *   描述:
- *   类型: JAVA
- *   最近修改时间:2017/11/23 17:48
- *   @version [版本号, V1.0]
- *   @since 2017/11/23 17:48
- *   @author gaoshudian
- */
 
 @Service
 public class UserDaoImpl {

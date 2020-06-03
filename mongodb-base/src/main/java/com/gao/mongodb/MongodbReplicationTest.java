@@ -17,15 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- *   名称: MongodbTest.java
- *   描述: mongodb测试
- *   类型: JAVA
- *   最近修改时间:2017/11/21 21:58
- *   @version [版本号, V1.0]
- *   @since 2017/11/21 21:58
- *   @author gaoshudian
- */
 public class MongodbReplicationTest {
 
     private static MongoCollection<Document> collection;

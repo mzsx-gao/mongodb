@@ -1,15 +1,8 @@
-package com.gao.mongodb.springboot;
+package com.gao.mongodb.springboot.entity;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * 名称: RepayPlanEntity.java
- * 描述: TODO
- *
- * @author gaoshudian
- * @date 2019/5/23 5:37 PM
- */
 @Data
 @Document(collection = "repayPlan")
 public class RepayPlanEntity {

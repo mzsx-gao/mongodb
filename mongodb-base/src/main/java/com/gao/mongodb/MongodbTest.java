@@ -18,15 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-/**
- *   名称: MongodbTest.java
- *   描述: mongodb测试
- *   类型: JAVA
- *   最近修改时间:2017/11/21 21:58
- *   @version [版本号, V1.0]
- *   @since 2017/11/21 21:58
- *   @author gaoshudian
- */
 public class MongodbTest {
 
     private static MongoCollection<Document> collection;
@@ -34,8 +25,9 @@ public class MongodbTest {
     //获取
     @Before
     public void before(){
-        MongoCredential credential = MongoCredential.createCredential("root","admin","root".toCharArray());
-        MongoClient client = new MongoClient(new ServerAddress("172.16.216.138",27017), Arrays.asList(credential));
+//        MongoCredential credential = MongoCredential.createCredential("root","admin","root".toCharArray());
+//        MongoClient client = new MongoClient(new ServerAddress("172.19.7.200",27017), credential,null);
+        MongoClient client = new MongoClient(new ServerAddress("172.19.7.200",27017));
         MongoDatabase db = client.getDatabase("test");
         collection = db.getCollection("test");
         System.out.println(collection);
