@@ -1,16 +1,12 @@
 package com.gao.mongodb;
 
 
-import com.mongodb.MongoClient;
+import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
@@ -25,10 +21,14 @@ public class MongodbTest {
     //获取
     @Before
     public void before(){
-//        MongoCredential credential = MongoCredential.createCredential("root","admin","root".toCharArray());
-//        MongoClient client = new MongoClient(new ServerAddress("172.19.7.200",27017), credential,null);
-        MongoClient client = new MongoClient(new ServerAddress("172.19.7.200",27017));
-        MongoDatabase db = client.getDatabase("test");
+        MongoCredential credential = MongoCredential.createCredential("root","admin","root".toCharArray());
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .credential(credential)
+                .applyToSslSettings(builder -> builder.enabled(true))
+                .applyToClusterSettings(builder -> builder.hosts(Arrays.asList(new ServerAddress("172.19.7.200", 27017))))
+                .build();
+        MongoClient mongoClient = MongoClients.create(settings);
+        MongoDatabase db = mongoClient.getDatabase("test");
         collection = db.getCollection("test");
         System.out.println(collection);
     }

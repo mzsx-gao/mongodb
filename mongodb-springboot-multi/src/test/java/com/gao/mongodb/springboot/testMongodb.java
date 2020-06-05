@@ -1,6 +1,9 @@
 package com.gao.mongodb.springboot;
 
 
+import com.gao.mongodb.springboot.dao.IUserRepository;
+import com.gao.mongodb.springboot.dao.UserDaoImpl;
+import com.gao.mongodb.springboot.entity.UserEntity;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +25,7 @@ public class testMongodb {
      * 测试通过mongoTemplate操作mongodb
      */
     @Test
-    public void testSaveUser() throws Exception {
+    public void testSaveUser() {
         UserEntity user=new UserEntity();
         user.setId("2l");
         user.setUserName("小明");
@@ -31,7 +34,7 @@ public class testMongodb {
     }
 
     @Test
-    public void testUpdateUser() throws Exception {
+    public void testUpdateUser() {
         UserEntity user=new UserEntity();
         user.setId("2l");
         user.setUserName("小明2");
