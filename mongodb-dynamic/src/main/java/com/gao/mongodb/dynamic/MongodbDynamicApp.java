@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfigurat
  * @author gaoshudian
  * @date 2020-06-05 16:16
  */
-@SpringBootApplication(scanBasePackages = {"com.gao.mongodb"},
+@SpringBootApplication(scanBasePackages = {"com.gao.mongodb.dynamic","com.gao.mongodb.dynamicdatasource"},
         exclude={MongoDataAutoConfiguration.class})
 public class MongodbDynamicApp {
     public static void main(String[] args) {
