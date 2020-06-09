@@ -12,6 +12,7 @@
         <module>mongodb-base</module>
         <module>mongodb-springboot</module>
         <module>mongodb-springboot-multi</module>
+        <module>mongodb-dynamic</module>
     </modules>
 
     <dependencies>

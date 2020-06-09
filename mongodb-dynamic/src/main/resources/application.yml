@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: mongodb-dynamic
+  data:
+    common:
+      uri: 172.19.7.200:27017
+      database: lenderb-multi-config
+      username: root
+      password: root
+      authdatabase: admin
+    default:
+      uri: 172.19.7.200:27017
+      database: mongodb-dynamic-default
+      username: root
+      password: root
+      authdatabase: admin
