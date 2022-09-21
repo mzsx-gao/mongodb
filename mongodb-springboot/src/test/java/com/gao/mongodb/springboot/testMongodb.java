@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.junit.Test;
-
 import java.util.List;
 
 
@@ -24,6 +23,9 @@ public class testMongodb {
     @Autowired
     private UserDaoImpl userDao;
 
+    // 这个IUserRepository要生效，其实可以不加@EnableMongoRepositories注解，因为springboot中
+    // MongoRepositoriesAutoConfiguration这个类中会导入MongoRepositoriesRegistrar，而MongoRepositoriesRegistrar内部会引入
+    // @EnableMongoRepositories注解,这个注解默认扫描启动类子目录里面的所有MongoRepository的子类并注册为spring的bean
     @Autowired
     private IUserRepository userRepository;
 
